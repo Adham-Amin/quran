@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quran/ui/screens/home/home_screen.dart';
+import 'package:quran/ui/screens/splash/splash_screen.dart';
 
 void main() {
   runApp(const Quran());
@@ -11,9 +13,11 @@ class Quran extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        
-      ),
+      routes: {
+        SplashScreen.routeName : (context) => SplashScreen(),
+        HomeScreen.routeName : (context) => HomeScreen(),
+      },
+      initialRoute: SplashScreen.routeName,
     );
   }
 }
