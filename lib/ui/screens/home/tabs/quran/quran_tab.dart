@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quran/ui/screens/home/tabs/quran/widgets/sura_details.dart';
+import 'package:quran/ui/screens/home/tabs/quran/widgets/sura_details_item.dart';
 import 'package:quran/ui/utils/app_assets.dart';
 import 'package:quran/ui/utils/app_colors.dart';
 
@@ -48,7 +48,7 @@ class QuranTab extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              SuraDetails(),
+              buildSuraItem(),
               SizedBox(
                 height: 10,
               ),
@@ -58,6 +58,25 @@ class QuranTab extends StatelessWidget {
       ),
     );
   }
+
+  Widget buildSuraItem() {
+    return Expanded(
+      child: ListView.separated(
+        physics: BouncingScrollPhysics(),
+        itemBuilder: (context, index) {
+          return SuraDetailsItem(index: index,);
+        },
+        separatorBuilder: (context, index) => Divider(
+          height: 30,
+          indent: 46,
+          endIndent: 46,
+          color: AppColors.white,
+        ),
+        itemCount: 114,
+      ),
+    );
+  }
+
   Widget buildTextField() {
     return TextField(
       cursorColor: AppColors.white,

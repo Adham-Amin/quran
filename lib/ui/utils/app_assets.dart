@@ -9,4 +9,7 @@ abstract final class AppAssets {
   static const String icSebha = 'assets/images/ic_sebha.png';
   static const String icRadio = 'assets/images/ic_radio.png';
   static const String icTimes = 'assets/images/ic_times.png';
+  static const String imConLeft = 'assets/images/im_con_left.png';
+  static const String imConRight = 'assets/images/im_con_right.png';
+  static const String imMosque = 'assets/images/im_mosque.png';
 }
