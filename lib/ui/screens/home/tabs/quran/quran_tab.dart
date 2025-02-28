@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran/ui/screens/home/tabs/quran/widgets/sura_details_item.dart';
 import 'package:quran/ui/utils/app_assets.dart';
 import 'package:quran/ui/utils/app_colors.dart';
+import 'package:quran/ui/utils/app_styles.dart';
 
 class QuranTab extends StatelessWidget {
   const QuranTab({super.key});
@@ -39,11 +40,7 @@ class QuranTab extends StatelessWidget {
               ),
               Text(
                 'Suras List',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: AppColors.white,
-                  fontWeight: FontWeight.w700,
-                ),
+                style: AppStyles.whiteBold16,
               ),
               SizedBox(
                 height: 10,

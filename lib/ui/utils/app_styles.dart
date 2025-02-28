@@ -12,4 +12,9 @@ abstract final class AppStyles {
     fontSize: 24,
     color: AppColors.primary,
   );
+  static const TextStyle whiteBold16 = TextStyle(
+    fontSize: 16,
+    color: AppColors.white,
+    fontWeight: FontWeight.w700,
+  );
 }

@@ -90,6 +90,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                             ),
                           )
                         : SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
                             child: Text(
                               suraContent,
                               textAlign: TextAlign.center,
