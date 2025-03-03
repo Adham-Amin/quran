@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:quran/constants_data.dart';
+import 'package:quran/models/sura_model.dart';
 import 'package:quran/ui/screens/home/tabs/quran/widgets/sura_details_item.dart';
 import 'package:quran/ui/utils/app_assets.dart';
 import 'package:quran/ui/utils/app_colors.dart';
 import 'package:quran/ui/utils/app_styles.dart';
 
-class QuranTab extends StatelessWidget {
+class QuranTab extends StatefulWidget {
   const QuranTab({super.key});
 
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
+
+class _QuranTabState extends State<QuranTab> {
+  String suraName = '';
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,11 +65,20 @@ class QuranTab extends StatelessWidget {
   }
 
   Widget buildSuraItem() {
+    List<SuraModel> filterSuras = [];
+    filterSuras = ConstantsData.suras.where((sura) {
+      return sura.nameAr.contains(suraName) ||
+          sura.nameEn.toLowerCase().contains(suraName.toLowerCase());
+    }).toList();
     return Expanded(
       child: ListView.separated(
+        itemCount: filterSuras.length,
         physics: BouncingScrollPhysics(),
         itemBuilder: (context, index) {
-          return SuraDetailsItem(index: index,);
+          return SuraDetailsItem(
+            index: index,
+            sura: filterSuras[index],
+          );
         },
         separatorBuilder: (context, index) => Divider(
           height: 30,
@@ -69,13 +86,17 @@ class QuranTab extends StatelessWidget {
           endIndent: 46,
           color: AppColors.white,
         ),
-        itemCount: 114,
       ),
     );
   }
 
   Widget buildTextField() {
     return TextField(
+      onChanged: (sura) {
+        setState(() {
+          suraName = sura;
+        });
+      },
       cursorColor: AppColors.white,
       cursorWidth: 2,
       style: TextStyle(

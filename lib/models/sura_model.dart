@@ -1,7 +1,13 @@
 class SuraModel {
-  final String enName;
-  final String arName;
+  final String nameAr;
+  final String nameEn;
   final String content;
+  final String verses;
 
-  SuraModel({required this.arName, required this.enName, required this.content});
+  const SuraModel({
+    required this.nameAr,
+    required this.nameEn,
+    required this.content,
+    required this.verses,
+  });
 }

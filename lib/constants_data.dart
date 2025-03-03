@@ -1,3 +1,5 @@
+import 'package:quran/models/sura_model.dart';
+
 abstract final class ConstantsData {
   static const List<String> arabicAuranSuras = [
     "الفاتحه",
@@ -347,4 +349,5 @@ abstract final class ConstantsData {
     '5',
     '6'
   ];
+  static List<SuraModel> suras = [];
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quran/constants_data.dart';
+import 'package:quran/models/sura_details_model.dart';
 import 'package:quran/models/sura_model.dart';
 import 'package:quran/ui/screens/sura_details/sura_details.dart';
 import 'package:quran/ui/utils/app_assets.dart';
@@ -8,9 +8,10 @@ import 'package:quran/ui/utils/app_styles.dart';
 class SuraDetailsItem extends StatelessWidget {
   const SuraDetailsItem({
     super.key,
-    required this.index,
+    required this.index, required this.sura,
   });
 
+  final SuraModel sura;
   final int index;
 
   @override
@@ -19,10 +20,10 @@ class SuraDetailsItem extends StatelessWidget {
       onTap: () => Navigator.pushNamed(
         context,
         SuraDetails.routeName,
-        arguments: SuraModel(
-          arName: ConstantsData.arabicAuranSuras[index],
-          enName: ConstantsData.englishQuranSurahs[index],
-          content: '${index + 1}.txt',
+        arguments: SuraContentModel(
+          arName: sura.nameAr,
+          enName: sura.nameEn,
+          content: sura.content,
         ),
       ),
       child: Row(
@@ -51,18 +52,18 @@ class SuraDetailsItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  ConstantsData.englishQuranSurahs[index],
+                  sura.nameEn,
                   style: AppStyles.whiteBold16.copyWith(fontSize: 20),
                 ),
                 Text(
-                  'Verses ${ConstantsData.ayaNumber[index]}',
+                  'Verses ${sura.verses}',
                   style: AppStyles.whiteBold16.copyWith(fontSize: 14),
                 ),
               ],
             ),
           ),
           Text(
-            ConstantsData.arabicAuranSuras[index],
+            sura.nameAr,
             style: AppStyles.whiteBold16.copyWith(fontSize: 20),
           ),
         ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:quran/models/sura_model.dart';
+import 'package:quran/models/sura_details_model.dart';
 import 'package:quran/ui/utils/app_assets.dart';
 import 'package:quran/ui/utils/app_colors.dart';
 import 'package:quran/ui/utils/app_styles.dart';
@@ -15,13 +15,13 @@ class SuraDetails extends StatefulWidget {
 
 class _SuraDetailsState extends State<SuraDetails> {
   String suraContent = '';
-  SuraModel? args;
+  SuraContentModel? args;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    final arguments = ModalRoute.of(context)?.settings.arguments as SuraModel;
+    final arguments = ModalRoute.of(context)?.settings.arguments as SuraContentModel;
     args = arguments;
     getSuraContent(args!.content);
   }
