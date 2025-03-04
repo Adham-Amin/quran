@@ -8,11 +8,10 @@ import 'package:quran/ui/utils/app_styles.dart';
 class SuraDetailsItem extends StatelessWidget {
   const SuraDetailsItem({
     super.key,
-    required this.index, required this.sura,
+    required this.sura,
   });
 
   final SuraModel sura;
-  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,7 @@ class SuraDetailsItem extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                '${index + 1}',
+                '${sura.index + 1}',
                 style: AppStyles.whiteBold16,
               ),
             ),

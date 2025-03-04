@@ -76,7 +76,6 @@ class _QuranTabState extends State<QuranTab> {
         physics: BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           return SuraDetailsItem(
-            index: index,
             sura: filterSuras[index],
           );
         },

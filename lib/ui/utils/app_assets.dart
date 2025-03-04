@@ -2,6 +2,7 @@ abstract final class AppAssets {
   static const String logo = 'assets/images/logo.png';
   static const String splash = 'assets/images/splash_screen.png';
   static const String background = 'assets/images/background.png';
+  static const String backgroundSebha = 'assets/images/background_sebha.png';
   static const String imRecent = 'assets/images/im_recent.png';
   static const String imSuraNumber = 'assets/images/im_sura_number.png';
   static const String icQuran = 'assets/images/ic_quran.png';
@@ -12,4 +13,5 @@ abstract final class AppAssets {
   static const String imConLeft = 'assets/images/im_con_left.png';
   static const String imConRight = 'assets/images/im_con_right.png';
   static const String imMosque = 'assets/images/im_mosque.png';
+  static const String imSebha = 'assets/images/im_sebha.png';
 }

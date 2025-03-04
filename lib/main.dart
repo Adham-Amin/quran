@@ -13,6 +13,7 @@ void main() {
         nameEn: ConstantsData.englishQuranSurahs[i],
         content: '${i + 1}.txt',
         verses: ConstantsData.ayaNumber[i],
+        index: i,
       ),
     );
   }
